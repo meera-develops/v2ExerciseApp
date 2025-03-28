@@ -2,24 +2,34 @@ import React from 'react';
 import { Text, View, StyleSheet, FlatList } from 'react-native';
 import { Button } from 'react-native-elements';
 
+// add the Array, navigation params, and suggessted exercises part 
+
 const exercises= [
     {
         id: '1',
         title: 'Push-ups',
-        type: 'repetition'   
+        type: 'repetition',
+        suggestedId: '4'   
     },
     {
         id: '2',
         title: 'Running',
-        type: 'duration'
+        type: 'duration',
+        suggestedId: '1',
     },
+    {
+      id: '3',
+      title: 'Planks',
+      type: 'duration',
+      suggestedId: '1',
+    },
+    {
+      id: '4',
+      title: 'Sit-ups',
+      type: 'repetition',
+      suggestedId: '2',
+    }
 ];
-
-// const Item = ({title}) => (
-//     <View style={styles.item}>
-//       <Text style={styles.title}>{title}</Text>
-//     </View>
-//   );
 
 export default function Home({ navigation }) {
     let renderItem = ({ item }) => (
@@ -29,7 +39,7 @@ export default function Home({ navigation }) {
             title={item.title} 
             onPress={() => {
                 const targetScreen = item.type === 'repetition' ? 'Repetition' : 'Duration';
-                navigation.push(targetScreen, { type: item.type });
+                navigation.push(targetScreen, { exercise: item, exercises });
             }}
             buttonStyle={styles.button}
             // titleStyle={styles.buttonTitle}
