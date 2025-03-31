@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import { View, Text, StyleSheet } from 'react-native';
 import { Button } from 'react-native-elements';
+import Icon from 'react-native-vector-icons/FontAwesome';
 
 export default function Repetition({ route, navigation }) {
 
@@ -56,7 +57,10 @@ export default function Repetition({ route, navigation }) {
                 <Button title={`Suggested: ${suggestedExercise.title}`} 
                     onPress={suggestExercise} buttonStyle={styles.button} />
                 <Button title="Go Home" onPress={() => navigation.navigate('Home')}
-                buttonStyle={styles.button} />
+                buttonStyle={styles.button}
+                icon={<Icon name="home" size={20} color='#fff'/>} 
+                iconRight={false}
+                iconContainerStyle={{ marginRight: 30 }} />
             </View>
         </View>
     )

@@ -1,6 +1,7 @@
 import React, { useState, useEffect, useRef } from 'react';
 import { View, Text, StyleSheet } from 'react-native';
 import { Button } from 'react-native-elements';
+import Icon from 'react-native-vector-icons/FontAwesome';
 
 
 export default function Duration({ route, navigation }) {
@@ -86,7 +87,12 @@ export default function Duration({ route, navigation }) {
                 <Button title={"Stop Timer"} onPress={stop} buttonStyle={styles.button} />
                 <Button title={"Reset Timer"} onPress={reset} buttonStyle={styles.button} />
                 <Button title={`Suggested: ${suggestedExercise.title}`} onPress={suggestExercise}buttonStyle={styles.button} />
-                <Button title="Go Home" onPress={() => navigation.navigate('Home')} buttonStyle={styles.button} />
+                <Button 
+                title="Go Home" 
+                onPress={() => navigation.navigate('Home')} buttonStyle={styles.button}
+                icon={<Icon name="home" size={20} color='#fff'/>} 
+                iconRight={false}
+                iconContainerStyle={{ marginRight: 30 }} />
             </View>
         </View>
     )
@@ -115,10 +121,9 @@ const styles = StyleSheet.create({
     button: {
         backgroundColor: '#000',
         borderRadius: 10,
-        padding: 8,
+        paddingVertical: 10,
+        paddingHorizontal: 10,
         marginBottom: 20,
-        borderColor: 'F1818B',
-        borderWidth: 3,
     },
     timer: {
         fontSize: 25,
@@ -131,5 +136,5 @@ const styles = StyleSheet.create({
         borderRadius: 20,
         marginBottom: 10,
 
-    }
+    },
 })

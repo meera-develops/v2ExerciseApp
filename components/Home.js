@@ -1,8 +1,6 @@
 import React from 'react';
 import { Text, View, StyleSheet, FlatList } from 'react-native';
-import { Button } from 'react-native-elements';
-
-// add the Array, navigation params, and suggessted exercises part 
+import { Button } from 'react-native-elements'; 
 
 const exercises= [
     {
