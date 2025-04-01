@@ -47,9 +47,9 @@ export default function Repetition({ route, navigation }) {
                 Count: {count}
             </Text>
             <View style={styles.buttonContainer}>
-                <Button title="Increase Count" onPress={increaseCount}
+                <Button title="+1" onPress={increaseCount}
                 buttonStyle={styles.button} />
-                <Button title="Decrease Count" onPress={decreaseCount}
+                <Button title="-1" onPress={decreaseCount}
                 buttonStyle={styles.button}
                 />
                 <Button title="Reset Count" onPress={resetCount}
